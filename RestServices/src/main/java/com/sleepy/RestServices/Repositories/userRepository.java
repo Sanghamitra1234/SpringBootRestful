@@ -7,5 +7,5 @@ import com.sleepy.RestServices.entities.User;
 
 @Repository
 public  interface userRepository extends JpaRepository<User, Long>{
-	
+	User findByName(String name);
 }

@@ -44,4 +44,8 @@ public class userController {
 	public void deleteUserById(@PathVariable ("id") long id) {
 		userService.deleteUserById(id);
 	}
+	@GetMapping("/usersByName/{name}")
+	public User getByName(@PathVariable("name") String name) {
+		return userService.getByName(name);
+	}
 }
