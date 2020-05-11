@@ -18,6 +18,8 @@ import com.sleepy.RestServices.exceptions.userNotFoundException;
 
 import java.util.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class userController {
  
@@ -31,7 +33,7 @@ public class userController {
 	}
 	
 	@PostMapping("/addUser")
-	public User createUser(@RequestBody  User u) {
+	public User createUser(@Valid @RequestBody  User u) {
 		try {
 			return userService.createUser(u);
 		} catch (userExistsException e) {
